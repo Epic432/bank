@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class Error {
 
-    @GetMapping("/error")
     public String error() {
         return "This is the java backend of the demo bank app";
     }
