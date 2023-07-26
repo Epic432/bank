@@ -95,4 +95,8 @@ public class AccountService {
 
     }
 
+    public void deleteAll() {
+        accountRepository.deleteAll();
+    }
+
 }

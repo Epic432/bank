@@ -18,7 +18,7 @@ public class Account {
     private float balance;
     private int transNum;
 
-    private HashMap<Integer, String> transHistory;
+    private HashMap<Integer, Transaction> transHistory;
 
     public Account(String userID, String type) {
         this.userID = userID;
@@ -56,16 +56,16 @@ public class Account {
         this.balance = balance;
     }
 
-    public HashMap<Integer, String> getTransHistory() {
+    public HashMap<Integer, Transaction> getTransHistory() {
         return transHistory;
     }
 
-    public void setTransHistory(HashMap<Integer, String> transHistory) {
+    public void setTransHistory(HashMap<Integer, Transaction> transHistory) {
         this.transHistory = transHistory;
     }
 
     public void addTrans(int transNum, Transaction trans) {
-        transHistory.put(transNum, trans.toString());
+        transHistory.put(transNum, trans);
     }
 
     public void deposit(float amount) {

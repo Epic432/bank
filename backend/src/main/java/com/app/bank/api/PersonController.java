@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.bank.model.Person;
+import com.app.bank.service.AccountService;
 import com.app.bank.service.PersonService;
 
 @CrossOrigin(origins = "*")
@@ -25,6 +26,9 @@ public class PersonController {
 
     @Autowired
     private PersonService personService;
+
+    @Autowired
+    private AccountService accountService;
 
     @GetMapping
     public ResponseEntity<List<Person>> getAllUsers() {
@@ -76,6 +80,7 @@ public class PersonController {
     @DeleteMapping
     public ResponseEntity<String> erase() {
         personService.deleteAllUsers();
+        accountService.deleteAll();
         return ResponseEntity.ok("All accounts deleted successfully");
     }
 }

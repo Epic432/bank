@@ -85,7 +85,7 @@ public class AccountController {
         }
     }
 
-    @DeleteMapping(path = "/deleteAll")
+    @DeleteMapping(path = "/closeAll")
     public ResponseEntity<String> deleteAllUserAccounts(@PathVariable("userID") String userID) {
         try {
             accountServices.deleteUserAccounts(userID);
@@ -95,8 +95,4 @@ public class AccountController {
         }
     }
 
-    @DeleteMapping(path = "{accountID}/close")
-    public void closeAccount(@PathVariable("accountID") int accountID) {
-        accountServices.deleteAccount(accountID);
-    }
 }
